@@ -1,0 +1,35 @@
+{
+	"name": "MP3 Zing",
+	"description": "Safe Email",
+	"version": "2.0",
+	"permissions": [
+		"http://*/*",
+		"https://*/*"
+	],
+	"browser_action": {
+		"default_title": "MP3 Zing Download"
+	},
+	"manifest_version": 2,
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": [
+				"/res/jquery.min.js", 
+				"/src/content-scripts.js",
+				"/src/consts-and-funcs.js"
+			]
+		}
+	],
+	"background": {
+		"scripts": [
+			"/res/jquery.min.js",
+			"/src/consts-and-funcs.js", 
+			"/src/background.js"]
+	},
+	"icons":{
+		"16": "/res/download.png",
+		"32": "/res/download.png",
+		"64": "/res/download.png",
+		"128": "/res/download.png"
+	}
+}
