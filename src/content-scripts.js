@@ -37,3 +37,23 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		});
 	}
 })
+
+if (window.location.href == 'https://online.vpbank.com.vn/cb/pages/jsp-ns/login-cons.jsp'){
+	var flag = false;
+	var interval = setInterval(function () {
+		if (!flag){
+			try {
+				// document.getElementById('password').setAttribute('size', 50)
+				var passField = document.getElementById('password')
+				if (passField){
+					passField.setAttribute('maxlength', 50)
+					flag = true;
+					clearInterval(interval)
+				}
+			}
+			catch (e){
+				console.log(e);
+			}
+		}
+	}, 10)
+}
